@@ -1,8 +1,13 @@
 import random
 from pyrogram import Client, enums
-from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
+from pyrogram.types import (
+    CallbackQuery,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    InputMediaPhoto,
+)
 from Script import text
-from config import ADMIN, PICS
+from config import ADMIN, PICS, VERSION
 
 @Client.on_callback_query()
 async def callback_query_handler(client, query: CallbackQuery):
@@ -28,10 +33,9 @@ async def callback_query_handler(client, query: CallbackQuery):
                 caption=text.HELP.format(query.from_user.mention)
             ),
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton('📢 𝖴𝗉𝖽𝖺𝗍𝖾𝗌', url='https://telegram.me/Techifybots'),
-                 InlineKeyboardButton('💬 𝖲𝗎𝗉𝗉𝗈𝗋𝗍', url='https://telegram.me/TechifySupport')],
-                [InlineKeyboardButton('↩️ 𝖡𝖺𝖼𝗄', callback_data="start", style=enums.ButtonStyle.PRIMARY),
-                 InlineKeyboardButton('❌ 𝖢𝗅𝗈𝗌𝖾', callback_data="close", style=enums.ButtonStyle.DANGER)]
+                [InlineKeyboardButton('👨‍💻 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 👨‍💻', user_id=int(ADMIN))],
+                [InlineKeyboardButton("↩️ 𝖡𝖺𝖼𝗄", callback_data="start", style=enums.ButtonStyle.PRIMARY),
+                 InlineKeyboardButton("❌ 𝖢𝗅𝗈𝗌𝖾", callback_data="close", style=enums.ButtonStyle.DANGER)]
             ])
         )
 
@@ -39,10 +43,10 @@ async def callback_query_handler(client, query: CallbackQuery):
         await query.message.edit_media(
             InputMediaPhoto(
                 media=random.choice(PICS),
-                caption=text.ABOUT
+                caption=text.ABOUT.format(VERSION)
             ),
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton('👨‍💻 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 👨‍💻', user_id=int(ADMIN))],
+                [InlineKeyboardButton('📂 𝖲𝗈𝗎𝗋𝖼𝖾 𝖢𝗈𝖽𝖾', url='https://github.com/TechifyBots/Auto-Approve-Bot')],
                 [InlineKeyboardButton("↩️ 𝖡𝖺𝖼𝗄", callback_data="start", style=enums.ButtonStyle.PRIMARY),
                  InlineKeyboardButton("❌ 𝖢𝗅𝗈𝗌𝖾", callback_data="close", style=enums.ButtonStyle.DANGER)]
             ])
