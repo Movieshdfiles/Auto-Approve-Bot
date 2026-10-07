@@ -46,27 +46,6 @@ class Techifybots:
             print("Error in get_user:", e)
             return None
 
-    async def set_session(self, user_id: int, session: Any) -> bool:
-        try:
-            result = await self.users.update_one(
-                {"user_id": user_id},
-                {"$set": {"session": session}}
-            )
-            if user_id in self.cache:
-                self.cache[user_id]["session"] = session
-            return result.modified_count > 0
-        except Exception as e:
-            print("Error in set_session:", e)
-            return False
-
-    async def get_session(self, user_id: int) -> Any | None:
-        try:
-            user = await self.get_user(user_id)
-            return user.get("session") if user else None
-        except Exception as e:
-            print("Error in get_session:", e)
-            return None
-
     async def get_all_users(self) -> list[dict[str, Any]]:
         try:
             users: list[dict[str, Any]] = []
