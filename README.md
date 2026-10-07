@@ -203,11 +203,6 @@ See the **[LICENSE](./LICENSE)** file for complete details.
 </a>
 </p>
 
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/TechifyBots/TechifyBots/main/assets/divider.svg" width="600" alt="divider"/>
-</p>
-
 > [!NOTE]
 > *This project is open source. Please don't rebrand or sell it as your own.*
 
@@ -220,3 +215,7 @@ See the **[LICENSE](./LICENSE)** file for complete details.
     <sub><i>© TechifyBots. All Rights Reserved.</i></sub>
   </p>
 </div>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/TechifyBots/TechifyBots/main/assets/footer.svg" width="600" alt="footer"/>
+</p>
