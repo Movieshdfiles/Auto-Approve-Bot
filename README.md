@@ -130,9 +130,7 @@ maintenance - Toggle maintenance mode
 broadcast - Broadcast messages to all bot users.
 ```
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/TechifyBots/TechifyBots/main/assets/divider.svg" width="600" alt="divider"/>
-</p>
+---
 
 ## 🚀 Deployment
 
